@@ -40,16 +40,16 @@ const Banner = () => {
                                     onClick={(e) => { e.preventDefault(); setTab(1); }}
                                 >
                                     <div className='flex flex-col gap-2 space-y-3'>
-                                        <h1 className='text-[#926d5c] text-5xl font-bold'>
+                                        <h1 className='text-[#442b20] text-5xl font-bold'>
                                             Unique Creations, Endless Inspiration: Explore a World of Handmade Wonders
                                         </h1>
-                                        <h2 className='text-[#926d5c] text-xl font-bold'>
+                                        <h2 className='text-[#442b20] text-xl font-bold'>
                                             From hand-carved treasures to intricately woven textiles, our artisans bring creativity to life. Dive into a world where every piece tells a story.
                                         </h2>
-                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#926d5c] group px-6 py-2 w-[40%]">
-                                            <span className="relative z-10 text-[#926d5c] group-hover:text-white text-lg duration-500">Learn More</span>
-                                            <span className="absolute w-full h-full bg-[#926d5c] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                            <span className="absolute w-full h-full bg-[#926d5c] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                            <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
+                                            <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                            <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
                                         </button>
                                     </div>
                                 </div>
@@ -60,16 +60,16 @@ const Banner = () => {
                                     onClick={(e) => { e.preventDefault(); setTab(2); }}
                                 >
                                     <div className='flex flex-col gap-2 space-y-3'>
-                                        <h1 className='text-[#926d5c] text-5xl font-bold'>
+                                        <h1 className='text-[#442b20] text-5xl font-bold'>
                                             Embrace the Artisanal Difference: Elevate Your Lifestyle with Local Craftsmanship
                                         </h1>
-                                        <h2 className='text-[#926d5c] text-xl font-bold'>
+                                        <h2 className='text-[#442b20] text-xl font-bold'>
                                             Discover products that go beyond the ordinary. Each item is a testament to the skill and dedication of our local artisans, adding a touch of uniqueness to your lifestyle.
                                         </h2>
-                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#926d5c] group px-6 py-2 w-[40%]">
-                                            <span className="relative z-10 text-[#926d5c] group-hover:text-white text-lg duration-500">Learn More</span>
-                                            <span className="absolute w-full h-full bg-[#926d5c] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                            <span className="absolute w-full h-full bg-[#926d5c] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                            <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
+                                            <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                            <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
                                         </button>
                                     </div>
                                 </div>
@@ -80,16 +80,16 @@ const Banner = () => {
                                     onClick={(e) => { e.preventDefault(); setTab(3); }}
                                 >
                                     <div className='flex flex-col gap-2 space-y-3'>
-                                        <h1 className='text-[#926d5c] text-5xl font-bold'>
+                                        <h1 className='text-[#442b20] text-5xl font-bold'>
                                             Connecting Hearts, Crafting Dreams: Uncover the Artistry of Your Community
                                         </h1>
-                                        <h2 className='text-[#926d5c] text-xl font-bold'>
+                                        <h2 className='text-[#442b20] text-xl font-bold'>
                                             At the heart of our marketplace is a community of passionate artisans. Join us in celebrating craftsmanship, supporting dreams, and fostering connections that transcend borders.
                                         </h2>
-                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#926d5c] group px-6 py-2 w-[40%]">
-                                            <span className="relative z-10 text-[#926d5c] group-hover:text-white text-lg duration-500">Learn More</span>
-                                            <span className="absolute w-full h-full bg-[#926d5c] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                            <span className="absolute w-full h-full bg-[#926d5c] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                            <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
+                                            <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                            <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
                                         </button>
                                     </div>
                                 </div>
