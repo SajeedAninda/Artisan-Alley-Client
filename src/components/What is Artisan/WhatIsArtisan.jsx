@@ -1,5 +1,8 @@
 import React from 'react';
-import logo from "@/assets/logo/logo.png"
+import artisanImg1 from "@/assets/whatisartisan/artisanImg.jpg"
+import artisanImg2 from "@/assets/whatisartisan/artisanImg2.jpg"
+import artisanImg3 from "@/assets/whatisartisan/artisanImg3.jpg"
+import artisanImg4 from "@/assets/whatisartisan/artisanImg4.jpg"
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -17,12 +20,12 @@ const WhatIsArtisan = () => {
                             <div className="w-full px-4 mb-10 xl:w-1/2 lg:mb-8" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
                                 <div className="flex gap-6 md:gap-0 flex-wrap" >
                                     <div className="w-full px-4 md:w-1/2">
-                                        <Image src={logo} alt="" layout="responsive" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80" />
-                                        <Image src={logo} alt="" layout="responsive" width={500} height={400} className="object-cover w-full rounded-lg h-80" />
+                                        <Image src={artisanImg1} alt="" layout="responsive" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80" />
+                                        <Image src={artisanImg2} alt="" layout="responsive" width={500} height={400} className="object-cover w-full rounded-lg h-80" />
                                     </div>
                                     <div className="w-full px-4 md:w-1/2 xl:mt-11">
-                                        <Image src={logo} alt="" layout="responsive" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80" />
-                                        <Image src={logo} alt="" layout="responsive" width={500} height={400} className="object-cover w-full rounded-lg h-80" />
+                                        <Image src={artisanImg3} alt="" layout="responsive" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80" />
+                                        <Image src={artisanImg4} alt="" layout="responsive" width={500} height={400} className="object-cover w-full rounded-lg h-80" />
                                     </div>
                                 </div>
                             </div>
