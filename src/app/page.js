@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner/Banner";
 import LocalArtisans from "@/components/Local Artisans/LocalArtisans";
+import PeopleSays from "@/components/People Says/PeopleSays";
 import RecentProducts from "@/components/Recent Products/RecentProducts";
 import WhatIsArtisan from "@/components/What is Artisan/WhatIsArtisan";
 import WorkingProcess from "@/components/Working Process/WorkingProcess";
@@ -14,6 +15,7 @@ export default function Home() {
       <WorkingProcess></WorkingProcess>
       <LocalArtisans></LocalArtisans>
       <RecentProducts></RecentProducts>
+      <PeopleSays></PeopleSays>
     </>
   );
 }
