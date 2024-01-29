@@ -32,7 +32,7 @@ const Banner = () => {
             <div className="relative w-[95%] mx-auto px-4 sm:px-6">
                 <div className="py-16">
                     <div className="flex flex-col gap-16 md:flex-row justify-between items-center">
-                        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
+                        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 flex-1" data-aos="fade-right">
                             <div className="mb-8 md:mb-0">
                                 <div
                                     className={`flex items-center transition duration-300 ease-in-out mb-3 cursor-auto ${tab !== 1 ? 'hidden' : ''}`}
@@ -96,7 +96,7 @@ const Banner = () => {
                             </div>
                         </div>
 
-                        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1">
+                        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 flex-1">
                             <div className="transition-all">
                                 <div className="relative flex flex-col text-center lg:text-right" data-aos="zoom-y-out" ref={tabs}>
                                     {/* Item 1 */}

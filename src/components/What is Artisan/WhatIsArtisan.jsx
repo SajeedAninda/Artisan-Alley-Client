@@ -12,7 +12,7 @@ const WhatIsArtisan = () => {
             <div className='w-[95%] mx-auto'>
                 <div className='text-center space-y-6 pt-10'>
                     <h1 className='text-[#442b20] font-bold text-4xl  md:text-5xl'>What is <span className='text-[#926d5c] underline hover:text-[#442b20] cursor-pointer'>Artisan Alley?</span></h1>
-                    <h3 className='text-[#442b20] font-semibold text-xl mt-3'>Explore our Artisan Alley, a curated space where the stories of local craftspeople come to life. In this vibrant corner of our marketplace, each handmade product is a masterpiece, crafted with passion and showcased with pride. Immerse yourself in the narratives behind every creation, as our artisans share their unique journeys and the artistry that goes into each piece. </h3>
+                    <h3 className='text-[#442b20] font-semibold text-xl mt-3 w-[80%] mx-auto'>Explore our Artisan Alley, a curated space where the stories of local craftspeople come to life. In this vibrant corner of our marketplace, each handmade product is a masterpiece, crafted with passion and showcased with pride. Immerse yourself in the narratives behind every creation, as our artisans share their unique journeys and the artistry that goes into each piece. </h3>
                 </div>
                 <section className="flex items-center pb-10 font-poppins">
                     <div className="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-6 md:px-6">
@@ -20,12 +20,12 @@ const WhatIsArtisan = () => {
                             <div className="w-full px-4 mb-10 xl:w-1/2 lg:mb-8" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
                                 <div className="flex gap-6 md:gap-0 flex-wrap" >
                                     <div className="w-full px-4 md:w-1/2">
-                                        <Image src={artisanImg1} alt="" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80" />
-                                        <Image src={artisanImg2} alt="" width={500} height={400} className="object-cover w-full rounded-lg h-80" />
+                                        <Image src={artisanImg1} alt="" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80 hover:scale-105 transition-all" />
+                                        <Image src={artisanImg2} alt="" width={500} height={400} className="object-cover w-full rounded-lg h-80 hover:scale-105 transition-all" />
                                     </div>
                                     <div className="w-full px-4 md:w-1/2 xl:mt-11">
-                                        <Image src={artisanImg3} alt="" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80" />
-                                        <Image src={artisanImg4} alt="" width={500} height={400} className="object-cover w-full rounded-lg h-80" />
+                                        <Image src={artisanImg3} alt="" width={500} height={400} className="object-cover w-full mb-6 rounded-lg h-80 hover:scale-105 transition-all" />
+                                        <Image src={artisanImg4} alt="" width={500} height={400} className="object-cover w-full rounded-lg h-80 hover:scale-105 transition-all" />
                                     </div>
                                 </div>
                             </div>
