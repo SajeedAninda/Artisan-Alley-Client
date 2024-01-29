@@ -27,7 +27,7 @@ const RecentProducts = () => {
                                     From <span className='font-semibold'>John Woodsmith</span>
                                 </p>
                                 <h5 className="mb-2 text-xl font-bold tracking-tight text-white flex items-center">200$ / Piece</h5>
-                                <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
+                                <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
                                     <span className="relative z-10 text-white group-hover:text-[#442b20] text-lg duration-500">View Details</span>
                                     <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                     <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
@@ -48,7 +48,7 @@ const RecentProducts = () => {
                                     From <span className='font-semibold'>Maria Leathercraft</span>
                                 </p>
                                 <h5 className="mb-2 text-xl font-bold tracking-tight text-white flex items-center">140$ / Piece</h5>
-                                <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
+                                <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
                                     <span className="relative z-10 text-white group-hover:text-[#442b20] text-lg duration-500">View Details</span>
                                     <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                     <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
@@ -69,7 +69,7 @@ const RecentProducts = () => {
                                     From <span className='font-semibold'>Sophie Ceramics</span>
                                 </p>
                                 <h5 className="mb-2 text-xl font-bold tracking-tight text-white flex items-center">260$ / Piece</h5>
-                                <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
+                                <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
                                     <span className="relative z-10 text-white group-hover:text-[#442b20] text-lg duration-500">View Details</span>
                                     <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                     <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
@@ -90,7 +90,7 @@ const RecentProducts = () => {
                                     From <span className='font-semibold'>Carlos Silversmith</span>
                                 </p>
                                 <h5 className="mb-2 text-xl font-bold tracking-tight text-white flex items-center">50$ / Piece</h5>
-                                <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
+                                <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
                                     <span className="relative z-10 text-white group-hover:text-[#442b20] text-lg duration-500">View Details</span>
                                     <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                     <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>

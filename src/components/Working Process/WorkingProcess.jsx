@@ -2,7 +2,7 @@ const WorkingProcess = () => {
     return (
         <div className='w-[95%] mx-auto'>
             <div className="bg-white text-[#442b20]">
-                <div className="container mx-auto flex flex-col items-start md:flex-row my-4 md:my-12">
+                <div className="container mx-auto flex flex-col items-start lg:flex-row my-4 md:my-12">
                     <div className="flex flex-col w-full sticky md:top-28 lg:w-1/3 mt-2 md:mt-12 px-8">
                         <p className="text-3xl md:text-5xl leading-normal md:leading-relaxed mb-2 font-bold">Working Process of Artisan Alley</p>
                         <p className="text-sm md:text-base text-[#442b20] mb-4">
