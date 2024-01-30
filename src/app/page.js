@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner/Banner";
+import Footer from "@/components/Footer/Footer";
 import LocalArtisans from "@/components/Local Artisans/LocalArtisans";
 import PeopleSays from "@/components/People Says/PeopleSays";
 import RecentProducts from "@/components/Recent Products/RecentProducts";
@@ -16,6 +17,7 @@ export default function Home() {
       <LocalArtisans></LocalArtisans>
       <RecentProducts></RecentProducts>
       <PeopleSays></PeopleSays>
+      <Footer></Footer>
     </>
   );
 }
