@@ -30,7 +30,7 @@ const Contact = () => {
     }
 
     return (
-        <div className='py-12 my-12 flex flex-col lg:flex-row justify-between items-center contactBg'>
+        <div className='py-12 my-12 flex flex-col lg:flex-row gap-6 lg:gap-0 justify-between items-center contactBg'>
             <div className="boxDiv grid grid-cols-2 flex-1">
                 <div className='flex flex-col justify-center items-center space-y-3 hover:bg-white rounded-xl cursor-pointer group p-6 transition-all text-center'>
                     <FaPeopleCarry className='text-white font-bold text-7xl group-hover:text-[#442b20]' />
@@ -83,7 +83,7 @@ const Contact = () => {
                             <textarea rows="5" className='py-3 px-3 mt-2 w-full border-2 border-white rounded-md' name='message' type="text" placeholder='Please Enter The Message That Your Want To Send' required />
                         </div>
 
-                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-3 w-full rounded-md mt-3">
+                        <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-3 w-full rounded-md mt-3">
                             <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Send a Message</span>
                             <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                             <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
