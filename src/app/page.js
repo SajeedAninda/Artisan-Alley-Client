@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner/Banner";
+import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 import LocalArtisans from "@/components/Local Artisans/LocalArtisans";
 import Newsletter from "@/components/Newsletter/Newsletter";
@@ -17,6 +18,7 @@ export default function Home() {
       <WorkingProcess></WorkingProcess>
       <LocalArtisans></LocalArtisans>
       <RecentProducts></RecentProducts>
+      <Contact></Contact>
       <PeopleSays></PeopleSays>
       <Newsletter></Newsletter>
       <Footer></Footer>
