@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner/Banner";
 import Footer from "@/components/Footer/Footer";
 import LocalArtisans from "@/components/Local Artisans/LocalArtisans";
+import Newsletter from "@/components/Newsletter/Newsletter";
 import PeopleSays from "@/components/People Says/PeopleSays";
 import RecentProducts from "@/components/Recent Products/RecentProducts";
 import WhatIsArtisan from "@/components/What is Artisan/WhatIsArtisan";
@@ -17,6 +18,7 @@ export default function Home() {
       <LocalArtisans></LocalArtisans>
       <RecentProducts></RecentProducts>
       <PeopleSays></PeopleSays>
+      <Newsletter></Newsletter>
       <Footer></Footer>
     </>
   );
