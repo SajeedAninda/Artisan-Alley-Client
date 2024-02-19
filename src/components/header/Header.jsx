@@ -5,11 +5,14 @@ import React, { useState } from 'react';
 import logo from "@/assets/logo/logo.png"
 import { TfiMenuAlt } from "react-icons/tfi";
 import { FaRegWindowClose } from "react-icons/fa";
+import useAuth from '@/Hooks/useAuth';
 
 
 
 const Header = () => {
     const [menuVisible, setMenuVisible] = useState(false);
+    let [showLogout, setShowLogout] = useState(false);
+    let { loggedInUser, logOut } = useAuth();
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
@@ -18,6 +21,20 @@ const Header = () => {
     const closeMenu = () => {
         setMenuVisible(false);
     };
+
+    let handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log("Logged Out")
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+    let toggleLogout = () => {
+        setShowLogout(!showLogout);
+    }
 
     return (
         <>
@@ -93,18 +110,31 @@ const Header = () => {
                         </ul>
 
                         {/* BUTTONS  */}
-                        <div className='flex gap-3'>
-                            <Link href={"/login"} className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
-                                <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign In</span>
-                                <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                            </Link>
-                            <Link href={"/register"} className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
-                                <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign Up</span>
-                                <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                            </Link>
-                        </div>
+                        {
+                            loggedInUser ?
+                                <div onClick={toggleLogout} className='pl-4 relative z-50'>
+                                    <img className='w-[70px] h-[70px] object-cover rounded-full border-4 hover:opacity-70 border-white cursor-pointer' src={loggedInUser?.photoURL} alt="" />
+
+                                    <button onClick={handleLogOut} className={`top-20 right-0 px-9 z-50 py-2 border-4 border-white text-white  cursor-pointer text-lg font-bold overflow-hidden bg-[#926d5c] rounded-md  transition-all duration-400 ease-in-out shadow-md hover:scale-105  hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#442b20] before:to-[#926d5c] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:left-0 absolute ${showLogout ? "translate-y-0" : "hidden translate-y-[-10px]"}`}>
+                                        Log Out
+                                    </button>
+                                </div>
+                                :
+                                <div className='flex gap-3'>
+                                    <Link href={"/login"} className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
+                                        <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign In</span>
+                                        <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                        <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                    </Link>
+                                    <Link href={"/register"} className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
+                                        <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign Up</span>
+                                        <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                        <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                    </Link>
+                                </div>
+                        }
+
+
                     </div>
                 </div>
 
@@ -136,57 +166,57 @@ const Header = () => {
                         </div>
                         <div>
                             <ul className='text-xl text-white font-semibold mt-4 space-y-6'>
-                            <li className='relative group'>
-                                <Link href={"/"} className=" transition-all duration-300">
-                                    Home
-                                    <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 "></span>
-                                </Link>
-                            </li>
-                            <li className="text-white">
-                            </li>
-                            <li className='relative group'>
-                                <Link href={"/"} className=" transition-all duration-300">
-                                    Products
-                                    <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
-                                </Link>
-                            </li>
-                            <li className="text-white">
-                            </li>
-                            <li className='relative group'>
-                                <Link href={"/"} className=" transition-all duration-300">
-                                    Artisans
-                                    <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
-                                </Link>
-                            </li>
-                            <li className="text-white">
-                            </li>
-                            <li className='relative group'>
-                                <Link href={"/"} className=" transition-all duration-300">
-                                    Events
-                                    <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
-                                </Link>
-                            </li>
-                            <li className="text-white">
-                            </li>
-                            <li className='relative group'>
-                                <Link href={"/"} className=" transition-all duration-300">
-                                    Community
-                                    <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
-                                </Link>
-                            </li>
+                                <li className='relative group'>
+                                    <Link href={"/"} className=" transition-all duration-300">
+                                        Home
+                                        <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 "></span>
+                                    </Link>
+                                </li>
+                                <li className="text-white">
+                                </li>
+                                <li className='relative group'>
+                                    <Link href={"/"} className=" transition-all duration-300">
+                                        Products
+                                        <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
+                                    </Link>
+                                </li>
+                                <li className="text-white">
+                                </li>
+                                <li className='relative group'>
+                                    <Link href={"/"} className=" transition-all duration-300">
+                                        Artisans
+                                        <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
+                                    </Link>
+                                </li>
+                                <li className="text-white">
+                                </li>
+                                <li className='relative group'>
+                                    <Link href={"/"} className=" transition-all duration-300">
+                                        Events
+                                        <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
+                                    </Link>
+                                </li>
+                                <li className="text-white">
+                                </li>
+                                <li className='relative group'>
+                                    <Link href={"/"} className=" transition-all duration-300">
+                                        Community
+                                        <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         <div className='flex flex-col gap-3 mt-10'>
-                            <button className="cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
+                            <Link href={"/login"} className="cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
                                 <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign In</span>
                                 <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                 <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                            </button>
-                            <button className="cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
+                            </Link>
+                            <Link href={"/register"} className="cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
                                 <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign Up</span>
                                 <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                 <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
