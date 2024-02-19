@@ -10,15 +10,15 @@ const Register = () => {
             <div className='w-[85%] mx-auto shadow-2xl bg-white h-[95%]'>
                 <h1 className='text-[#442b20] text-3xl pt-8 font-bold text-center'>Please Select Your Role</h1>
                 <div className='flex justify-center mt-12 gap-6 items-center'>
-                    <div className='flex flex-col justify-center items-center space-y-3 hover:bg-[#442b20] rounded-xl cursor-pointer group p-6 transition-all text-center border-2 border-[#442b20] shadow-lg'>
+                    <Link href={"/registerUser"} className='flex flex-col justify-center items-center space-y-3 hover:bg-[#442b20] rounded-xl cursor-pointer group p-6 transition-all text-center border-2 border-[#442b20] shadow-lg'>
                         <IoPeopleSharp className='text-[#442b20] font-bold text-[140px] group-hover:text-white' />
                         <h1 className='text-[#442b20] font-bold text-4xl italic group-hover:text-white'>Register as an User</h1>
-                    </div>
+                    </Link>
 
-                    <div className='flex flex-col justify-center items-center space-y-3 hover:bg-[#442b20] rounded-xl cursor-pointer group p-6 transition-all text-center border-2 border-[#442b20] shadow-lg'>
+                    <Link href={"/registerArtisan"} className='flex flex-col justify-center items-center space-y-3 hover:bg-[#442b20] rounded-xl cursor-pointer group p-6 transition-all text-center border-2 border-[#442b20] shadow-lg'>
                         <GiStakeHammer className='text-[#442b20] font-bold text-[140px] group-hover:text-white' />
                         <h1 className='text-[#442b20] font-bold text-4xl italic group-hover:text-white'>Register as an Artisan</h1>
-                    </div>
+                    </Link>
                 </div>
 
                 <div className='flex justify-center mt-6'>
