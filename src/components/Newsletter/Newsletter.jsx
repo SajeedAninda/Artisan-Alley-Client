@@ -1,17 +1,13 @@
-"use client"
-import Lottie from 'lottie-react';
 import React from 'react';
 import { MdMarkEmailUnread } from "react-icons/md";
-import newsletterLottie from "@/assets/LottieFiles/newsletterLottie.json"
+import LottieComponent from './LottieComponent';
 
 
 const Newsletter = () => {
     return (
         <div className='w-[95%] mx-auto py-12'>
             <div className='bg-gradient-to-r from-[#442b20] to-[#926d5c] px-8 flex flex-col lg:flex-row justify-between items-center rounded-2xl h-fit py-12 lg:py-0'>
-                <div className="lottieDiv w-full lg:w-[40%]">
-                    <Lottie animationData={newsletterLottie} loop={true} />
-                </div>
+                <LottieComponent></LottieComponent>
 
                 <div className="textDiv w-full lg:w-[60%]">
                     <div className='space-y-3'>
