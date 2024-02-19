@@ -1,7 +1,10 @@
 "use client"
 
-const RegisterUserForm = () => {
+import { useState } from "react";
+
+const RegisterArtisanForm = () => {
     let [selectedImage, setSelectedImage] = useState(null);
+    let [selectedExpertise, setSelectedExpertise] = useState("");
 
     let handleImageChange = (e) => {
         let file = e.target.files[0];
@@ -31,6 +34,36 @@ const RegisterUserForm = () => {
             <div className='mt-4'>
                 <label className='text-md font-medium'>Password<span className='text-red-500'>*</span></label> <br></br>
                 <input type='password' name="password" className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' placeholder='Enter Password' required></input>
+            </div>
+
+            <div className='mt-4'>
+                <label className='text-md font-medium'>Date of Birth<span className='text-red-500'>*</span></label> <br></br>
+                <input type='date' name="date" className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' required></input>
+            </div>
+
+            <div className='mt-4'>
+                <label className='text-md font-medium' htmlFor="expertise">
+                    Expertise<span className='text-red-500'>*</span>
+                </label>
+                <br />
+                <select onChange={(e) => { setSelectedExpertise(e.target.value) }} className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' required>
+                    <option value="">Select Your Expertise</option>
+                    <option value="jewelryMaking">Jewelry Making</option>
+                    <option value="woodworkind">Woodworking</option>
+                    <option value="pottery&ceramics">Pottery & Ceramics</option>
+                    <option value="textiles&fiber">Textiles & Fiber Arts</option>
+                    <option value="metalworking">Metalworking</option>
+                    <option value="painting&drawing">Painting & Drawing</option>
+                    <option value="leatherworking">Leatherworking</option>
+                    <option value="glassart">Glass Art</option>
+                    <option value="soap&candle">Soap & Candle Making</option>
+                    <option value="papercrafting">Paper Crafting</option>
+                </select>
+            </div>
+
+            <div className='mt-4'>
+                <label className='text-md font-medium'>Bio<span className='text-red-500'>*</span></label> <br></br>
+                <input type='text' name="bio" className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' placeholder='Write Your Bio' required></input>
             </div>
 
             <div className='mt-5 bg-white w-full m-auto rounded-xl'>
@@ -63,4 +96,4 @@ const RegisterUserForm = () => {
     );
 };
 
-export default RegisterUserForm;
+export default RegisterArtisanForm;
