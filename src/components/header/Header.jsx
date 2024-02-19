@@ -94,16 +94,16 @@ const Header = () => {
 
                         {/* BUTTONS  */}
                         <div className='flex gap-3'>
-                            <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
+                            <Link href={"/login"} className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
                                 <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign In</span>
                                 <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                 <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                            </button>
-                            <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
+                            </Link>
+                            <Link href={"/register"} className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
                                 <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign Up</span>
                                 <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                                 <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
