@@ -1,12 +1,17 @@
 "use client"
+import useAuth from "@/Hooks/useAuth";
 import useAxiosInstance from "@/Hooks/useAxiosInstance";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
 const RegisterUserForm = () => {
     let [selectedImage, setSelectedImage] = useState(null);
     let axiosInstance = useAxiosInstance();
+    let { signUp, profileUpdate } = useAuth();
+    const router = useRouter();
+
 
     let handleImageChange = (e) => {
         let file = e.target.files[0];
@@ -47,7 +52,7 @@ const RegisterUserForm = () => {
         if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
             return toast.error("Password should contain at least one special character!")
         }
-        let loadingToast = toast.loading('Registering...');
+        let loadingToast = toast.loading('Registering User...');
 
         try {
             let res = await axios.post("https://api.imgbb.com/1/upload?key=cbd289d81c381c05afbab416f87e8637", data);
@@ -67,7 +72,7 @@ const RegisterUserForm = () => {
                                         toast.dismiss(loadingToast);
                                         toast.success("Registration Successful. Please Login");
                                         console.log(user);
-                                        navigate("/login");
+                                        router.push('/login');
                                     }
                                 })
                                 .catch((error) => {
