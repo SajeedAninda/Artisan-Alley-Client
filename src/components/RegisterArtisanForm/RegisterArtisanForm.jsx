@@ -1,10 +1,17 @@
 "use client"
-
+import useAuth from "@/Hooks/useAuth";
+import useAxiosInstance from "@/Hooks/useAxiosInstance";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const RegisterArtisanForm = () => {
     let [selectedImage, setSelectedImage] = useState(null);
     let [selectedExpertise, setSelectedExpertise] = useState("");
+    let { signUp, profileUpdate } = useAuth();
+    const router = useRouter();
+    let axiosInstance = useAxiosInstance();
 
     let handleImageChange = (e) => {
         let file = e.target.files[0];
@@ -19,8 +26,80 @@ const RegisterArtisanForm = () => {
         }
     };
 
+    let handleRegister = async (e) => {
+        e.preventDefault();
+
+        if (!selectedImage) {
+            toast.error("Please upload an image");
+            return;
+        }
+
+        let name = e.target.name.value;
+        let email = e.target.email.value;
+        let password = e.target.password.value;
+        let date_of_birth = e.target.date.value;
+        let image = e.target.elements.image.files[0];
+        let bio = e.target.bio.value;
+        let expertise = selectedExpertise;
+
+        let data = new FormData();
+        data.append("image", image);
+
+        if (password.length < 6) {
+            return toast.error("Password Length should atleast be 6 Characters!")
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            return toast.error("Password should contain at least one capital letter!")
+        }
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            return toast.error("Password should contain at least one special character!")
+        }
+        let loadingToast = toast.loading('Registering Artisan...');
+
+        try {
+            let res = await axios.post("https://api.imgbb.com/1/upload?key=cbd289d81c381c05afbab416f87e8637", data);
+            let imageUrl = res.data.data.display_url;
+            let userDetails = { name, email, imageUrl, date_of_birth, expertise, bio, role: "artisan" };
+
+            signUp(email, password)
+                .then((userCredential) => {
+                    let user = userCredential.user;
+                    profileUpdate(name, imageUrl)
+                        .then(() => {
+
+                            axiosInstance.post("/userRegister", userDetails)
+                                .then(res => {
+                                    console.log(res.data);
+                                    if (res.data.insertedId) {
+                                        toast.dismiss(loadingToast);
+                                        toast.success("Registration Successful. Please Login");
+                                        console.log(user);
+                                        router.push('/login');
+                                    }
+                                })
+                                .catch((error) => {
+                                    console.timeLog(error);
+                                })
+                        })
+                })
+                .catch((error) => {
+                    let errorCode = error.code;
+                    console.log(errorCode)
+                    if (errorCode === "auth/email-already-in-use") {
+                        toast.dismiss(loadingToast);
+                        return toast.error("Email is already being used");
+                    }
+                });
+        } catch (error) {
+            console.error("Error uploading image:", error);
+            toast.dismiss(loadingToast);
+            toast.error("Error uploading image");
+        }
+    }
+
     return (
-        <form className='mt-6'>
+        <form onSubmit={handleRegister} className='mt-6'>
             <div>
                 <label className='text-md font-medium'>Full Name<span className='text-red-500'>*</span></label> <br></br>
                 <input type='name' name="name" className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' placeholder='Enter Your Full Name' required></input>
