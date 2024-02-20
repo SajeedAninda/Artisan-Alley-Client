@@ -72,8 +72,8 @@ const UserHeader = () => {
                                 <h3>|</h3>
                             </li>
                             <li className='relative group'>
-                                <Link href={"/addProducts"} className=" transition-all duration-300">
-                                    Add Products
+                                <Link href={"/bookmarks"} className=" transition-all duration-300">
+                                    Bookmarked Products
                                     <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
                                 </Link>
                             </li>
@@ -81,17 +81,8 @@ const UserHeader = () => {
                                 <h3>|</h3>
                             </li>
                             <li className='relative group'>
-                                <Link href={"/myProducts"} className=" transition-all duration-300">
-                                    My Products
-                                    <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
-                                </Link>
-                            </li>
-                            <li className="text-white">
-                                <h3>|</h3>
-                            </li>
-                            <li className='relative group'>
-                                <Link href={"/bookings"} className=" transition-all duration-300">
-                                    Bookings
+                                <Link href={"/userBookings"} className=" transition-all duration-300">
+                                    My Bookings
                                     <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
                                 </Link>
                             </li>
@@ -163,16 +154,16 @@ const UserHeader = () => {
                                 <li className="text-white">
                                 </li>
                                 <li className='relative group'>
-                                    <Link href={"/addProducts"} className=" transition-all duration-300">
-                                        Add Products
+                                    <Link href={"/bookmarks"} className=" transition-all duration-300">
+                                        Bookmarked Products
                                         <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
                                     </Link>
                                 </li>
                                 <li className="text-white">
                                 </li>
                                 <li className='relative group'>
-                                    <Link href={"/myProducts"} className=" transition-all duration-300">
-                                        My Products
+                                    <Link href={"/userBookings"} className=" transition-all duration-300">
+                                        My Bookings
                                         <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
                                     </Link>
                                 </li>
