@@ -12,10 +12,9 @@ const Header = () => {
     const [menuVisible, setMenuVisible] = useState(false);
     let [showLogout, setShowLogout] = useState(false);
     let { loggedInUser, logOut } = useAuth();
-    let currentUserEmail = loggedInUser?.email;
 
-    let currentUser = useCurrentUserData();
-    console.log(currentUser);
+    let { userData } = useCurrentUserData();
+    console.log(userData);
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);

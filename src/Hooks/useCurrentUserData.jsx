@@ -16,6 +16,8 @@ const useCurrentUserData = () => {
         enabled: !!currentUserEmail,
     });
 
+    // console.log(userData);
+
     return { userData, isUserLoading };
 };
 
