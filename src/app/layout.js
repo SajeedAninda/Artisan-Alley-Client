@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
         <TanstackQueryClientProvider>
           <AuthProvider>
             <Toaster />
-            <Header></Header>
+            {/* <Header></Header> */}
             {children}
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
           </AuthProvider>
         </TanstackQueryClientProvider>
       </body>
