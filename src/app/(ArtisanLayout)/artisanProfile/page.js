@@ -1,10 +1,11 @@
+import ArtisanDashboard from '@/components/ArtisanDashboard/ArtisanDashboard';
 import React from 'react';
 
 const ArtisanProfile = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+          <ArtisanDashboard></ArtisanDashboard>  
+        </>
     );
 };
 
