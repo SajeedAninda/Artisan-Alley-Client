@@ -12,7 +12,7 @@ import Header from "@/components/header/Header";
 export default function Home() {
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
       <Banner></Banner>
       <WhatIsArtisan></WhatIsArtisan>
       <WorkingProcess></WorkingProcess>
@@ -21,7 +21,7 @@ export default function Home() {
       <Contact></Contact>
       <PeopleSays></PeopleSays>
       <Newsletter></Newsletter>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   );
 }
