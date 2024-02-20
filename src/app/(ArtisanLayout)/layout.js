@@ -1,7 +1,7 @@
 import ArtisanHeader from '@/components/ArtisanHeader/ArtisanHeader';
 import { Toaster } from 'react-hot-toast';
 
-const DefaultLayout = ({ children }) => {
+const ArtisanLayout = ({ children }) => {
     return (
         <div>
             <Toaster/>
@@ -11,4 +11,4 @@ const DefaultLayout = ({ children }) => {
     );
 };
 
-export default DefaultLayout;
+export default ArtisanLayout;
