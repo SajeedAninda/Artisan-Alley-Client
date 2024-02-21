@@ -2,10 +2,11 @@
 import useAxiosInstance from "@/Hooks/useAxiosInstance";
 import useProductsByArtisan from "@/Hooks/useProductsByArtisan";
 import Image from "next/image";
+import Link from "next/link";
 import toast from "react-hot-toast";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { TbEditCircle } from "react-icons/tb";
 import Swal from "sweetalert2";
-
 
 const ArtisanMyProducts = () => {
     let axiosInstance = useAxiosInstance()
@@ -51,6 +52,11 @@ const ArtisanMyProducts = () => {
                                     <div className="absolute top-2 right-2">
                                         <div onClick={() => handleDeleteProduct(product?._id)} className="p-3 rounded-full bg-red-500 cursor-pointer">
                                             <RiDeleteBin5Fill className="text-white font-bold text-3xl" />
+                                        </div>
+                                    </div>
+                                    <div className="absolute top-16 right-2 mt-2">
+                                        <div className="p-3 rounded-full bg-blue-700 cursor-pointer">
+                                           <Link href={`myProducts/${product?._id}`}> <TbEditCircle className="text-white font-bold text-3xl" /></Link>
                                         </div>
                                     </div>
                                 </div>
