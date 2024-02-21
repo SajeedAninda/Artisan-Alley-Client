@@ -9,7 +9,7 @@ const useProductsByArtisan = () => {
     let { loggedInUser } = useContext(AuthContext)
     let currentUserEmail = loggedInUser?.email;
 
-    const { data: products, isLoading: isProductsLoading } = useQuery({
+    const { data: products, isLoading: isProductsLoading, refetch } = useQuery({
         queryKey: ['products', currentUserEmail],
         queryFn: async () => {
             const response = await axiosInstance.get(`/getProducts/${currentUserEmail}`);
@@ -18,7 +18,7 @@ const useProductsByArtisan = () => {
         enabled: !!currentUserEmail,
     });
 
-    return { products, isProductsLoading };
+    return { products, isProductsLoading, refetch };
 };
 
 export default useProductsByArtisan;
