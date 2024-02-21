@@ -1,10 +1,21 @@
 "use client"
+import useAuth from '@/Hooks/useAuth';
+import useAxiosInstance from '@/Hooks/useAxiosInstance';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const AddProductForm = () => {
     let [selectedCategory, setSelectedCategory] = useState("");
     let [selectedLocation, setSelectedLocation] = useState("");
     let [selectedImage, setSelectedImage] = useState(null);
+    let axiosInstance = useAxiosInstance();
+    let currentTime = new Date();
+    let router = useRouter();
+
+    let { loggedInUser } = useAuth();
+    let currentUserEmail = loggedInUser?.email;
 
     let handleImageChange = (e) => {
         let file = e.target.files[0];
@@ -19,9 +30,52 @@ const AddProductForm = () => {
         }
     };
 
+    let handleAddProduct = async (e) => {
+        e.preventDefault();
+
+        if (!selectedImage) {
+            toast.error("Please upload an image");
+            return;
+        }
+
+        let product_name = e.target.productName.value;
+        let product_price = e.target.productPrice.value;
+        let product_category = selectedCategory;
+        let product_short_description = e.target.productShortDescription.value;
+        let product_broad_description = e.target.productBroadDescription.value;
+        let product_location = selectedLocation;
+        let artisan_email = currentUserEmail;
+        let addedTime = currentTime;
+
+        let data = new FormData();
+        data.append("image", selectedImage);
+
+        let loadingToast = toast.loading('Adding Product...');
+
+        try {
+            let res = await axios.post("https://api.imgbb.com/1/upload?key=cbd289d81c381c05afbab416f87e8637", data);
+            let imageUrl = res.data.data.display_url;
+            let productDetails = { product_name, product_price, product_category, product_short_description, product_broad_description, product_location, artisan_email, addedTime, imageUrl };
+
+            axiosInstance.post("/products", productDetails)
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.insertedId) {
+                        toast.dismiss(loadingToast);
+                        toast.success("Added Product Successfully");
+                        router.push("/artisanProfile")
+                    }
+                })
+        } catch (error) {
+            console.error("Error uploading image:", error);
+            toast.dismiss(loadingToast);
+            toast.error("Error uploading image");
+        }
+    }
+
     return (
         <div className='w-[90%] mx-auto mt-4'>
-            <form>
+            <form onSubmit={handleAddProduct}>
                 <div>
                     <label className='text-[#442b20] text-lg font-bold' htmlFor="productName">Product Name</label> <br />
                     <input className='w-full py-2 px-4 border-2 border-[#442b20] rounded-md mt-2' type="text" name="productName" placeholder='Type Your Product Name' required />
@@ -61,8 +115,8 @@ const AddProductForm = () => {
                 </div>
 
                 <div className='mt-4'>
-                    <label className='text-[#442b20] text-lg font-bold' htmlFor="productBroadtDescription">Product Broad Description</label> <br />
-                    <textarea className='w-full py-2 px-4 border-2 border-[#442b20] rounded-md mt-2' name="productBroadtDescription" id="productBroadtDescription" cols="30" rows="3" placeholder='Write a broad Detail about your Product' required></textarea>
+                    <label className='text-[#442b20] text-lg font-bold' htmlFor="productBroadDescription">Product Broad Description</label> <br />
+                    <textarea className='w-full py-2 px-4 border-2 border-[#442b20] rounded-md mt-2' name="productBroadDescription" id="productBroadDescription" cols="30" rows="3" placeholder='Write a broad Detail about your Product' required></textarea>
                 </div>
 
                 <div className='flex gap-6 mt-4'>
@@ -85,9 +139,9 @@ const AddProductForm = () => {
                     </div>
 
 
-                    <div className='bg-white w-full rounded-xl flex-1'>
+                    <div className='bg-white w-full rounded-md flex-1'>
                         <p className='text-[#442b20] text-lg font-bold'>Image: </p>
-                        <div className='px-5 py-1 relative border-2 border-[#442b20] rounded-lg mt-1'>
+                        <div className='px-5 py-1 relative border-2 border-[#442b20] rounded-md mt-[6px]'>
                             <div className='flex flex-col w-max mx-auto text-center'>
                                 <label>
                                     <input
