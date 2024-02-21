@@ -17,6 +17,8 @@ const AddProductForm = () => {
     let { loggedInUser } = useAuth();
     let currentUserEmail = loggedInUser?.email;
 
+    console.log(loggedInUser)
+
     let handleImageChange = (e) => {
         let file = e.target.files[0];
 
@@ -45,6 +47,7 @@ const AddProductForm = () => {
         let product_broad_description = e.target.productBroadDescription.value;
         let product_location = selectedLocation;
         let artisan_email = currentUserEmail;
+        let artisan_name = loggedInUser?.displayName;
         let addedTime = currentTime;
 
         let data = new FormData();
@@ -55,7 +58,7 @@ const AddProductForm = () => {
         try {
             let res = await axios.post("https://api.imgbb.com/1/upload?key=cbd289d81c381c05afbab416f87e8637", data);
             let imageUrl = res.data.data.display_url;
-            let productDetails = { product_name, product_price, product_category, product_short_description, product_broad_description, product_location, artisan_email, addedTime, imageUrl };
+            let productDetails = { product_name, product_price, product_category, product_short_description, product_broad_description, product_location, artisan_name, artisan_email, addedTime, imageUrl };
 
             axiosInstance.post("/products", productDetails)
                 .then(res => {
