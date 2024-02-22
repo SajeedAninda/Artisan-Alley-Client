@@ -72,8 +72,8 @@ const UserHeader = () => {
                                 <h3>|</h3>
                             </li>
                             <li className='relative group'>
-                                <Link href={"/bookmarks"} className=" transition-all duration-300">
-                                    Bookmarked Products
+                                <Link href={"/favourites"} className=" transition-all duration-300">
+                                    Favourite Products
                                     <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
                                 </Link>
                             </li>

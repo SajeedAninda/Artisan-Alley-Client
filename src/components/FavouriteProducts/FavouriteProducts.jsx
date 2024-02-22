@@ -1,39 +1,39 @@
+"use client"
+import useAuth from '@/Hooks/useAuth';
 import useAxiosInstance from '@/Hooks/useAxiosInstance';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const AllProductsCards = ({ searchValue, selectedCategory, selectedLocation }) => {
+const FavouriteProducts = () => {
     let axiosInstance = useAxiosInstance();
+    let { loggedInUser } = useAuth();
+    let currentUserEmail = loggedInUser?.email;
 
-    const { data: allProducts, isLoading: isProductsLoading, refetch } = useQuery({
-        queryKey: ['allProducts', searchValue, selectedCategory, selectedLocation],
+    const { data: favouriteProducts, isLoading: isFavouritesLoading, refetch } = useQuery({
+        queryKey: ['favouriteProducts', currentUserEmail],
         queryFn: async () => {
-            const response = await axiosInstance.get(`/getAllProducts`, {
-                params: {
-                    searchValue: searchValue,
-                    selectedCategory: selectedCategory,
-                    selectedLocation: selectedLocation
-                }
-            });
+            const response = await axiosInstance.get(`/getFavouriteProducts/${currentUserEmail}`);
             return response.data;
         }
-    });
+    })
+
+    console.log(favouriteProducts)
 
     return (
         <div>
-            {isProductsLoading ? (
+            {isFavouritesLoading ? (
                 <div className='h-screen flex justify-center items-center text-3xl font-bold text-[#442b20]'>Loading...</div>
             ) : (
                 <div>
-                    {allProducts?.length === 0 ? (
+                    {favouriteProducts?.length === 0 ? (
                         <div className='h-[90%] flex justify-center items-center py-12'>
-                            <h2 className="text-3xl font-bold text-[#442b20]">No products available</h2>
+                            <h2 className="text-3xl font-bold text-[#442b20]">No products added to Favourites</h2>
                         </div>
                     ) : (
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-6'>
-                            {allProducts?.map(product => (
+                            {favouriteProducts?.map(product => (
                                 <div key={product.id} className="card">
                                     <div className="bg-white rounded-lg shadow-lg flex flex-col">
                                         <div className="relative">
@@ -48,7 +48,7 @@ const AllProductsCards = ({ searchValue, selectedCategory, selectedLocation }) =
                                                 From <span className='font-semibold'>{product?.artisan_name}</span>
                                             </p>
                                             <h5 className="mb-2 text-xl font-bold tracking-tight text-white flex items-center">{product?.product_price}$ / Piece</h5>
-                                            <Link href={`products/${product?._id}`}>
+                                            <Link href={`products/${product?.productId}`}>
                                                 <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2 w-full">
                                                     <span className="relative z-10 text-white group-hover:text-[#442b20] text-lg duration-500">View Details</span>
                                                     <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
@@ -67,4 +67,4 @@ const AllProductsCards = ({ searchValue, selectedCategory, selectedLocation }) =
     );
 };
 
-export default AllProductsCards;
+export default FavouriteProducts;
