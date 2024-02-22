@@ -21,6 +21,12 @@ const ProductDetails = ({ params }) => {
         ({ _id, product_name, product_price, product_category, product_short_description, product_broad_description, product_location, imageUrl, addedTime, artisan_name, artisan_email } = productDetails);
     }
 
+    let formatDateString = (dateString) => {
+        const date = new Date(dateString);
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    };
+
     return (
         <div className='py-8 w-[90%] mx-auto'>
             <div className='flex gap-10'>
@@ -46,11 +52,11 @@ const ProductDetails = ({ params }) => {
                     <div>
                         <h2 className='text-4xl font-bold text-[#442b20]'>{product_name}</h2>
                         <h2 className='text-2xl font-bold text-[#442b20] mt-3'>{product_short_description}</h2>
-                        <h2 className='text-lg font-bold text-[#442b20] mt-3'>{product_broad_description}</h2>
+                        <h2 className='text-lg font-semibold text-[#442b20] mt-3'>{product_broad_description}</h2>
                         <h2 className='text-3xl font-bold text-[#442b20] mt-3'>Product Price: {product_price}$ / Piece</h2>
-                        <h2 className='text-2xl font-bold text-[#442b20] mt-3'>Product Location: {product_location}</h2>
-                        <h2 className='text-lg font-bold text-[#442b20] mt-3'>Product ID:  {_id}</h2>
-                        <h2 className='text-lg font-bold text-[#442b20] mt-3'>Product Added on {addedTime}</h2>
+                        <h2 className='text-2xl font-semibold text-[#442b20] mt-3'>Product Location: {product_location}</h2>
+                        <h2 className='text-lg font-semibold text-[#442b20] mt-3 capitalize'>Product ID:  {_id && _id.slice(-9)}</h2>
+                        <h2 className='text-lg font-semibold text-[#442b20] mt-3'>Product Added on {addedTime && formatDateString(addedTime)}</h2>
                         <div className='bg-gradient-to-r from-[#442b20] to-[#926d5c] rounded-md p-4 w-full text-center mt-3'>
                             <h2 className='text-xl font-bold text-white'>Crafted By {artisan_name}</h2>
                             <h2 className='text-lg font-bold text-white'>{artisan_email}</h2>
