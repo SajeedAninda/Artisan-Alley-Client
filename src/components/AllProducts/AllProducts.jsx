@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { BsSearchHeart } from "react-icons/bs";
 import { TbZoomReset } from "react-icons/tb";
+import AllProductsCards from '../AllProductsCards/AllProductsCards';
 
 
 const AllProducts = () => {
@@ -74,6 +75,8 @@ const AllProducts = () => {
                     <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
                 </button>
             </div>
+
+            <AllProductsCards></AllProductsCards>
         </div>
     );
 };
