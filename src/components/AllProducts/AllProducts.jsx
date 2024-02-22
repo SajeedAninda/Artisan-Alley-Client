@@ -76,7 +76,7 @@ const AllProducts = () => {
                 </button>
             </div>
 
-            <AllProductsCards></AllProductsCards>
+            <AllProductsCards searchValue={searchValue} selectedCategory={selectedCategory} selectedLocation={selectedLocation}></AllProductsCards>
         </div>
     );
 };
