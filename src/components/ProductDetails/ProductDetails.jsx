@@ -68,6 +68,8 @@ const ProductDetails = ({ params }) => {
         setIsOpen(true);
     }
 
+    let orderTime = new Date();
+
     let handleOrderProduct = (e) => {
         e.preventDefault();
         let client_name = loggedInUser?.displayName;
@@ -81,7 +83,7 @@ const ProductDetails = ({ params }) => {
             return;
         }
 
-        let orderDetails = { client_name, client_email, client_phone, shipping_address, order_quantity, productId, product_name, product_price, product_category, product_short_description, product_broad_description, product_location, imageUrl, addedTime, artisan_name, artisan_email };
+        let orderDetails = { client_name, client_email, client_phone, shipping_address, order_quantity, productId, product_name, product_price, product_category, product_short_description, product_broad_description, product_location, imageUrl, artisan_name, artisan_email,orderTime };
         
         let loadingToast = toast.loading('Confirming Order...');
         axiosInstance.post(`/addOrder`, orderDetails)
@@ -90,6 +92,7 @@ const ProductDetails = ({ params }) => {
                 if (res.data.insertedId) {
                     toast.dismiss(loadingToast);
                     toast.success("Order Confirmed");
+                    closeModal()
                 }
             })
             .catch(error => {
