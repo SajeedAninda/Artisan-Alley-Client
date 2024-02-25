@@ -15,8 +15,6 @@ const RecentProductsCards = () => {
         }
     });
 
-    console.log(recentProducts);
-
     return (
         <div>
             {isProductsLoading ? (

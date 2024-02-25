@@ -134,7 +134,7 @@ const RegisterArtisanForm = () => {
                 <select onChange={(e) => { setSelectedExpertise(e.target.value) }} className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' required>
                     <option value="">Select Your Expertise</option>
                     <option value="jewelryMaking">Jewelry Making</option>
-                    <option value="woodworkind">Woodworking</option>
+                    <option value="woodworking">Woodworking</option>
                     <option value="pottery&ceramics">Pottery & Ceramics</option>
                     <option value="textiles&fiber">Textiles & Fiber Arts</option>
                     <option value="metalworking">Metalworking</option>
