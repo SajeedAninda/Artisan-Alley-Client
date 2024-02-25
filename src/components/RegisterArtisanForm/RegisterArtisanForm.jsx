@@ -35,6 +35,7 @@ const RegisterArtisanForm = () => {
         }
 
         let name = e.target.name.value;
+        let phone = e.target.phone.value;
         let email = e.target.email.value;
         let password = e.target.password.value;
         let date_of_birth = e.target.date.value;
@@ -60,7 +61,7 @@ const RegisterArtisanForm = () => {
         try {
             let res = await axios.post("https://api.imgbb.com/1/upload?key=cbd289d81c381c05afbab416f87e8637", data);
             let imageUrl = res.data.data.display_url;
-            let userDetails = { name, email, imageUrl, date_of_birth, expertise, bio, role: "artisan" };
+            let userDetails = { name,phone, email, imageUrl, date_of_birth, expertise, bio, role: "artisan" };
 
             signUp(email, password)
                 .then((userCredential) => {
@@ -103,6 +104,11 @@ const RegisterArtisanForm = () => {
             <div>
                 <label className='text-md font-medium'>Full Name<span className='text-red-500'>*</span></label> <br></br>
                 <input type='name' name="name" className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' placeholder='Enter Your Full Name' required></input>
+            </div>
+
+            <div className='mt-4'>
+                <label className='text-md font-medium'>Phone Number<span className='text-red-500'>*</span></label> <br></br>
+                <input type='tel' name="phone" className='w-full mt-2 border-2 border-[#442b20] px-6 py-2 rounded-md' placeholder='Enter Your Phone Number' required></input>
             </div>
 
             <div className='mt-4'>
