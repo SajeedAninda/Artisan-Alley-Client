@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import useAxiosInstance from '@/Hooks/useAxiosInstance';
 import { useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
 
 let getExpertiseText = (expertise) => {
     switch (expertise) {
@@ -78,11 +79,11 @@ const LocalArtisanCard = () => {
                                         {getExpertiseText(artisans?.expertise)}
                                     </p>
                                     <div className="ordernow flex flex-row justify-center items-center w-full mt-3">
-                                        <p
+                                        <Link href={`artisans/${artisans?._id}`}
                                             className="btun4 lg:inline-flex items-center gap-3 group-hover:bg-[#442b20] group-hover:text-white bg-white shadow-[10px_10px_150px_#ff9f0d] cursor-pointer py-2 px-4 text-sm font-semibold rounded-full butn"
                                         >
                                             See Details
-                                        </p>
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
