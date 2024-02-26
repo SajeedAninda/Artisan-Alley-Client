@@ -6,11 +6,14 @@ import banner1 from "@/assets/banner/banner1.png"
 import banner2 from "@/assets/banner/banner2.png"
 import banner3 from "@/assets/banner/banner3.png"
 import Image from 'next/image';
+import useAuth from '@/Hooks/useAuth';
+import Link from 'next/link';
 
 
 const Banner = () => {
     const [tab, setTab] = useState(1);
     const tabs = useRef(null);
+    let { loggedInUser } = useAuth();
 
     const heightFix = () => {
         if (tabs.current && tabs.current.parentElement) {
@@ -46,11 +49,22 @@ const Banner = () => {
                                         <h2 className='text-[#442b20] text-xl font-bold'>
                                             From hand-carved treasures to intricately woven textiles, our artisans bring creativity to life. Dive into a world where every piece tells a story.
                                         </h2>
-                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
-                                            <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
-                                            <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                            <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                                        </button>
+                                        {
+                                            loggedInUser ?
+                                                <Link href={"/products"} className="hidden lg:inline-block text-center cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Explore</span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                                </Link>
+
+                                                : 
+                                                
+                                                <Link href={"/login"} className="hidden lg:inline-block text-center cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                                </Link>
+                                        }
                                     </div>
                                 </div>
 
@@ -66,11 +80,22 @@ const Banner = () => {
                                         <h2 className='text-[#442b20] text-xl font-bold'>
                                             Discover products that go beyond the ordinary. Each item is a testament to the skill and dedication of our local artisans, adding a touch of uniqueness to your lifestyle.
                                         </h2>
-                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
-                                            <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
-                                            <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                            <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                                        </button>
+                                        {
+                                            loggedInUser ?
+                                                <Link href={"/products"} className="hidden lg:inline-block text-center cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Explore</span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                                </Link>
+
+                                                : 
+                                                
+                                                <Link href={"/login"} className="hidden lg:inline-block text-center cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                                </Link>
+                                        }
                                     </div>
                                 </div>
 
@@ -86,11 +111,22 @@ const Banner = () => {
                                         <h2 className='text-[#442b20] text-xl font-bold'>
                                             At the heart of our marketplace is a community of passionate artisans. Join us in celebrating craftsmanship, supporting dreams, and fostering connections that transcend borders.
                                         </h2>
-                                        <button className="hidden lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
-                                            <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
-                                            <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                            <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                                        </button>
+                                        {
+                                            loggedInUser ?
+                                                <Link href={"/products"} className="hidden lg:inline-block text-center cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Explore</span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                                </Link>
+
+                                                : 
+                                                
+                                                <Link href={"/login"} className="hidden lg:inline-block text-center cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-[40%]">
+                                                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                                                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                                                </Link>
+                                        }
                                     </div>
                                 </div>
                             </div>
