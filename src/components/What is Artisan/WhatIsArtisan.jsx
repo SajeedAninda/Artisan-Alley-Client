@@ -85,13 +85,6 @@ const WhatIsArtisan = () => {
                                     </li>
 
                                 </ul>
-                                <Link href={"/"}>
-                                    <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-full md:w-[50%]">
-                                        <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Log In to Learn More</span>
-                                        <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                                        <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                                    </button>
-                                </Link>
                             </div>
                         </div>
                     </div>

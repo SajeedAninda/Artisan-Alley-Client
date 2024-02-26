@@ -8,11 +8,6 @@ const WorkingProcess = () => {
                         <p className="text-sm md:text-base text-[#442b20] mb-4">
                             In Artisan Alley, we've sculpted a space where creativity flourishes, connections bloom, and every interaction adds depth to the narrative of local craftsmanship. This serves as a comprehensive guide to optimize the Artisan Alley experience for both regular users and artisans, ensuring they derive maximum benefit from the platform.
                         </p>
-                        <button className="lg:inline-block cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 w-full md:w-[50%]">
-                            <span className="relative z-10 text-[#442b20] group-hover:text-white text-lg duration-500">Learn More</span>
-                            <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                            <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                        </button>
                     </div>
 
 
