@@ -16,7 +16,7 @@ const PrivateRoute = ({children}) => {
                 ariaLabel="blocks-loading"
                 wrapperStyle={{}}
                 wrapperClass="blocks-wrapper"
-                colors={['#ed4747', '#0e2b45', '#ed4747', '#0e2b45', '#ed4747']}
+                colors={['#442b20', '#926d5c', '#442b20', '#926d5c', '#442b20']}
             />
         </div>
     }
