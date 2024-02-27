@@ -32,6 +32,50 @@ const LoginForm = () => {
             });
     }
 
+    let handleDemoUser = () => {
+        let DemoUserEmail = "jimmy@gmail.com";
+        let DemoUserPassword = "Jimmy!99!";
+        let loadingToast = toast.loading('Logging In...');
+        signIn(DemoUserEmail, DemoUserPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                toast.dismiss(loadingToast);
+                toast.success('Logged In Successfully!');
+                router.push('/');
+            })
+            .catch((error) => {
+                let errorCode = error.code;
+                console.log(errorCode);
+                if (errorCode === "auth/invalid-credential") {
+                    toast.dismiss(loadingToast);
+                    return toast.error("Invalid Username or Password")
+                }
+            });
+    }
+
+    let handleDemoArtisan = () => {
+        let DemoArtisanEmail = "johnny@gmail.com";
+        let DemoArtisanPassword = "Johnny!99!";
+        let loadingToast = toast.loading('Logging In...');
+        signIn(DemoArtisanEmail, DemoArtisanPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                toast.dismiss(loadingToast);
+                toast.success('Logged In Successfully!');
+                router.push('/');
+            })
+            .catch((error) => {
+                let errorCode = error.code;
+                console.log(errorCode);
+                if (errorCode === "auth/invalid-credential") {
+                    toast.dismiss(loadingToast);
+                    return toast.error("Invalid Username or Password")
+                }
+            });
+    }
+
     return (
         <form onSubmit={handleLogin} className='mt-6'>
             <div>
@@ -49,6 +93,20 @@ const LoginForm = () => {
                 <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
                 <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
             </button>
+
+            <div className="flex gap-8">
+                <button onClick={handleDemoUser} type='button' className="lg:inline-block cursor-pointer overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 mt-8 w-full rounded-md font-bold">
+                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-xl duration-500">Demo User</span>
+                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                </button>
+
+                <button onClick={handleDemoArtisan} type='button' className="lg:inline-block cursor-pointer overflow-hidden relative z-100 border border-[#442b20] group px-6 py-2 mt-8 w-full rounded-md font-bold">
+                    <span className="relative z-10 text-[#442b20] group-hover:text-white text-xl duration-500">Demo Artisan</span>
+                    <span className="absolute w-full h-full bg-[#442b20] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                    <span className="absolute w-full h-full bg-[#442b20] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                </button>
+            </div>
         </form>
     );
 };
