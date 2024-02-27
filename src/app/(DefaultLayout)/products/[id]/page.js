@@ -1,10 +1,13 @@
+import PrivateRoute from '@/components/Authentication/PrivateRoute/PrivateRoute';
 import ProductDetails from '@/components/ProductDetails/ProductDetails';
 import React from 'react';
 
-const ProductDetail = ({params}) => {
+const ProductDetail = ({ params }) => {
     return (
         <>
-            <ProductDetails params={params}></ProductDetails>
+            <PrivateRoute>
+                <ProductDetails params={params}></ProductDetails>
+            </PrivateRoute>
         </>
     );
 };
