@@ -46,7 +46,7 @@ const ArtisanMyProducts = () => {
                 {
                     products?.map(product =>
                         <div className="card">
-                            <div className="bg-white rounded-lg shadow-lg flex flex-col">
+                            <div className="bg-white rounded-lg shadow-lg flex flex-col h-[500px]">
                                 <div className="relative">
                                     <Image width={400} height={400} className="rounded-t-lg w-full h-[200px] object-cover" src={product?.imageUrl} alt="" />
                                     <div className="absolute top-2 right-2">
@@ -60,7 +60,7 @@ const ArtisanMyProducts = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="p-5 flex flex-col flex-grow bg-gradient-to-r from-[#442b20] to-[#926d5c] rounded-b-lg">
+                                <div className="p-5 flex flex-col justify-between flex-grow bg-gradient-to-r from-[#442b20] to-[#926d5c] rounded-b-lg">
                                     <h5 className="mb-2 text-xl font-bold tracking-tight text-white">{product?.product_name}</h5>
                                     <p className="mb-3 font-normal text-white">
                                         {product?.product_short_description}
