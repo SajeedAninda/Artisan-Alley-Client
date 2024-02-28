@@ -6,10 +6,10 @@ import Link from 'next/link';
 
 const Register = () => {
     return (
-        <div className='bg-[#926d5c67] h-screen py-16'>
-            <div className='w-[85%] mx-auto shadow-2xl bg-white h-[95%]'>
+        <div className='bg-[#926d5c67] py-16'>
+            <div className='w-[85%] mx-auto shadow-2xl py-24 px-12 bg-white h-fit flex justify-center items-center flex-col'>
                 <h1 className='text-[#442b20] text-3xl pt-8 font-bold text-center'>Please Select Your Role</h1>
-                <div className='flex justify-center mt-12 gap-6 items-center'>
+                <div className='flex flex-col lg:flex-row justify-center mt-12 gap-6 items-center'>
                     <Link href={"/registerUser"} className='flex flex-col justify-center items-center space-y-3 hover:bg-[#442b20] rounded-xl cursor-pointer group p-6 transition-all text-center border-2 border-[#442b20] shadow-lg'>
                         <IoPeopleSharp className='text-[#442b20] font-bold text-[140px] group-hover:text-white' />
                         <h1 className='text-[#442b20] font-bold text-4xl italic group-hover:text-white'>Register as an User</h1>

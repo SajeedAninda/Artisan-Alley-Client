@@ -9,7 +9,7 @@ const Login = () => {
     return (
         <div className='bg-[#926d5c67] py-16'>
             <div className='flex w-[85%] mx-auto shadow-2xl'>
-                <div className='flex-1 bg-white px-24 py-16'>
+                <div className='flex-1 bg-white px-12 md:px-24 py-16'>
                     <div className='w-[80px]'>
                         <Image src={logo} alt='logo'></Image>
                     </div>
@@ -26,7 +26,7 @@ const Login = () => {
                     <p className='text-center mt-6 text-[#442b20]'>Don't have any Account? <Link className='text-[#442b20] font-bold hover:underline' href={"/register"}>Register</Link></p>
                 </div>
 
-                <div className='flex-1'>
+                <div className='hidden lg:inline-block flex-1'>
                     <Image className='w-full object-cover h-full' src={loginImg} alt='login image'></Image>
                 </div>
             </div>
