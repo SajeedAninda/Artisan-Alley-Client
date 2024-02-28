@@ -3,6 +3,7 @@ import Image from 'next/image';
 import useAxiosInstance from '@/Hooks/useAxiosInstance';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
+import ProductCardSkeleton from '../Skeletons/ProductCardSkeleton';
 
 const RecentProductsCards = () => {
     let axiosInstance = useAxiosInstance();
@@ -18,7 +19,7 @@ const RecentProductsCards = () => {
     return (
         <div>
             {isProductsLoading ? (
-                <div className='h-screen flex justify-center items-center text-3xl font-bold text-[#442b20]'>Loading...</div>
+                <ProductCardSkeleton></ProductCardSkeleton>
             ) : (
                 <div>
                     {recentProducts?.length === 0 ? (

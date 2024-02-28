@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import ProductCardSkeleton from '../Skeletons/ProductCardSkeleton';
 
 const AllProductsCards = ({ searchValue, selectedCategory, selectedLocation }) => {
     let axiosInstance = useAxiosInstance();
@@ -24,7 +25,7 @@ const AllProductsCards = ({ searchValue, selectedCategory, selectedLocation }) =
     return (
         <div>
             {isProductsLoading ? (
-                <div className='h-screen flex justify-center items-center text-3xl font-bold text-[#442b20]'>Loading...</div>
+                <ProductCardSkeleton></ProductCardSkeleton>
             ) : (
                 <div>
                     {allProducts?.length === 0 ? (
