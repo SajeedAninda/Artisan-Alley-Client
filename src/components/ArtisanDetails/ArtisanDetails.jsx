@@ -88,12 +88,12 @@ const ArtisanDetails = ({ params }) => {
 
     return (
         <div>
-            <div className="flex justify-center items-center gap-6">
-                <div className="border-4 border-[#442b20] rounded-md w-[35%]">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-6">
+                <div className="border-4 border-[#442b20] rounded-md w-full lg:w-[35%]">
                     <Image className="w-full h-[400px] object-cover" width={500} height={400} src={imageUrl} alt="artisan image"></Image>
                 </div>
 
-                <div className="space-y-4 w-[65%]">
+                <div className="space-y-4 w-full lg:w-[65%]">
                     <h1 className="text-5xl font-bold text-[#442b20]">{name}</h1>
                     <h2 className="text-3xl font-bold text-[#442b20]">{getExpertiseText(expertise)}</h2>
                     <h2 className="text-xl font-semibold text-[#442b20]">{bio}</h2>

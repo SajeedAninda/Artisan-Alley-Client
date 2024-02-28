@@ -217,6 +217,29 @@ const Header = () => {
                                         <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
                                     </Link>
                                 </li>
+                                {
+                                    userData?.role === "artisan" &&
+                                    <>
+                                        <li className='relative group'>
+                                            <Link href={"/artisanProfile"} className=" transition-all duration-300">
+                                                Profile
+                                                <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
+                                            </Link>
+                                        </li>
+                                    </>
+                                }
+
+                                {
+                                    userData?.role === "user" &&
+                                    <>
+                                        <li className='relative group'>
+                                            <Link href={"/userProfile"} className=" transition-all duration-300">
+                                                Profile
+                                                <span className="absolute inset-x-0 bottom-0 h-1 bg-[#F7FFF7] rounded-2xl transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
+                                            </Link>
+                                        </li>
+                                    </>
+                                }
                             </ul>
                         </div>
                         <div className={`${loggedInUser ? 'hidden' : 'flex'
