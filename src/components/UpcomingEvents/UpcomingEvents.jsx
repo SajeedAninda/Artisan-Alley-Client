@@ -32,7 +32,7 @@ const UpcomingEvents = async () => {
                     <p className='text-[#442b20] text-center font-semibold w-[70%] mx-auto'>Stay Updated and Engaged: Explore Our Exciting Calendar of Upcoming Events! Join Us for Workshops, Exhibitions, Demonstrations, and More.</p>
                 </div>
 
-                <div className='grid grid-cols-3 gap-6 mt-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
                     {
                         upcomingEvents?.map(event =>
                             <div>

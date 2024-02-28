@@ -103,7 +103,7 @@ const ProductDetails = ({ params }) => {
 
     return (
         <div className='py-8 w-[90%] mx-auto'>
-            <div className='flex gap-10'>
+            <div className='flex flex-col lg:flex-row gap-10'>
                 <div className='flex-1'>
                     <Image width={400} height={400} className="rounded-lg w-full h-[400px] border-8 border-[#442b20] object-cover" src={imageUrl} alt="" />
 
@@ -196,21 +196,21 @@ const ProductDetails = ({ params }) => {
                                     </div>
 
                                     <div className="mt-3 flex flex-row gap-3 items-center justify-center">
-                                        <p className="text-lg text-white font-bold w-[20%]">
+                                        <p className="text-base md:text-lg text-white font-bold w-[20%]">
                                             Quantity:
                                         </p>
                                         <input type="number" name='quantity' className='py-2 rounded-md px-4 w-[80%]' placeholder='Quantity of Items You want to order' required />
                                     </div>
 
                                     <div className="mt-3 flex flex-row gap-3 items-center justify-center">
-                                        <p className="text-lg text-white font-bold w-[20%]">
+                                        <p className="text-base md:text-lg text-white font-bold w-[20%]">
                                             Phone No:
                                         </p>
                                         <input name='client_phone_number' type="tel" className='py-2 rounded-md px-4 w-[80%]' placeholder='Enter Your Phone Number' required />
                                     </div>
 
                                     <div className="mt-3 flex flex-row gap-3 items-center justify-center">
-                                        <p className="text-lg text-white font-bold w-[20%]">
+                                        <p className="text-base md:text-lg text-white font-bold w-[20%]">
                                             Shipping Address:
                                         </p>
                                         <input name='client_shipping_address' type="text" className='py-2 rounded-md px-4 w-[80%]' placeholder='Enter Your Address' required />

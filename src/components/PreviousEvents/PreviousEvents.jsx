@@ -33,7 +33,7 @@ const PreviousEvents = async() => {
                     <p className='text-[#442b20] text-center font-semibold w-[70%] mx-auto'>Explore the list of our past events and discover the experiences we've shared together.</p>
                 </div>
 
-                <div className='grid grid-cols-3 gap-6 mt-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
                     {
                         previousEvents?.map(event =>
                             <div>

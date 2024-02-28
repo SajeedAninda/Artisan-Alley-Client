@@ -114,7 +114,7 @@ const Header = () => {
                                 </>
                             }
 
-{
+                            {
                                 userData?.role === "user" &&
                                 <>
                                     <li className="text-white">
@@ -165,7 +165,7 @@ const Header = () => {
                 <div className={`navbar-menu relative z-50 ${menuVisible ? '' : 'hidden'}`}>
                     <div className="navbar-backdrop fixed inset-0 bg-white opacity-25" onClick={closeMenu}></div>
                     <div className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-[#926d5c] border-r overflow-y-auto">
-                        <div className="flex items-center mb-8">
+                        <div className="flex justify-between items-center mb-8">
                             <Link href="/">
                                 <div className='flex gap-3 items-center'>
                                     {/* LOGO  */}
@@ -181,7 +181,7 @@ const Header = () => {
                                     </h2>
                                 </div>
                             </Link>
-                            <button className="navbar-close flex items-center justify-end text-white text-2xl p-3" onClick={closeMenu}>
+                            <button className="navbar-close flex items-end justify-end text-white text-2xl p-3" onClick={closeMenu}>
                                 <FaRegWindowClose />
                             </button>
                         </div>
@@ -219,7 +219,8 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='flex flex-col gap-3 mt-10'>
+                        <div className={`${loggedInUser ? 'hidden' : 'flex'
+                            } flex-col gap-3 mt-10`}>
                             <Link href={"/login"} className="cursor-pointer font-semibold overflow-hidden relative z-100 border border-white group px-6 py-2">
                                 <span className="relative z-10 text-white group-hover:text-[#926d5c] text-lg duration-500">Sign In</span>
                                 <span className="absolute w-full h-full bg-white -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
@@ -231,6 +232,7 @@ const Header = () => {
                                 <span className="absolute w-full h-full bg-white -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
                             </Link>
                         </div>
+
                     </div>
                 </div>
             </div>
