@@ -4,6 +4,7 @@ import Image from 'next/image';
 import useAxiosInstance from '@/Hooks/useAxiosInstance';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
+import ArtisanCardSkeleton from '../Skeletons/ArtisanCardSkeleton';
 
 let getExpertiseText = (expertise) => {
     switch (expertise) {
@@ -55,7 +56,7 @@ const LocalArtisanCard = () => {
         <div>
             {/* CARD DIV */}
             {isArtisansLoading ? (
-                <div className='h-screen flex justify-center items-center text-3xl font-bold text-[#442b20]'>Loading...</div>
+                <ArtisanCardSkeleton></ArtisanCardSkeleton>
             ) : (
                 <div>
                     {randomArtisans.length === 0 ? (
