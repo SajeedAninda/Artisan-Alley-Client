@@ -1,5 +1,6 @@
 import React from 'react';
 import ArtisanDashboardLottie from '../ArtisanDashboardLottie/ArtisanDashboardLottie';
+import UserDashboardLottie from '../UserDashboardLottie/UserDashboardLottie';
 
 const UserDashboard = () => {
     return (
@@ -11,7 +12,7 @@ const UserDashboard = () => {
                 </div>
 
                 <div className='flex-1'>
-                    <ArtisanDashboardLottie></ArtisanDashboardLottie>
+                    <UserDashboardLottie></UserDashboardLottie>
                 </div>
             </div>
         </div>

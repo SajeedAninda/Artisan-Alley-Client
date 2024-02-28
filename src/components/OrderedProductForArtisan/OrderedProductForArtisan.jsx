@@ -35,9 +35,9 @@ const OrderedProductForArtisan = () => {
                             <h2 className="text-3xl font-bold text-[#442b20]">No Orders / Bookings made</h2>
                         </div>
                     ) : (
-                        <div className='py-6 w-[70%] mx-auto'>
+                        <div className='py-6 w-full md:w-[80%] lg:w-[70%] mx-auto'>
                             {orders?.map(order => (
-                                <div className='flex gap-6 border-4 border-[#442b20] rounded-md p-8'>
+                                <div className='flex flex-col gap-6 border-4 border-[#442b20] rounded-md p-8'>
                                     <div className='flex-1'>
                                         <Image className='border-4 rounded-md w-full h-[400px] object-cover border-[#442b20]' width={600} height={400} src={order?.imageUrl} alt='ordered product image'></Image>
                                     </div>
