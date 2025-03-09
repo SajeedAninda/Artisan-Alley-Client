@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Artisan Alley
+Artisan Alley is a dynamic marketplace where artisans from various backgrounds come together to showcase their craft. From intricately handcrafted jewelry to meticulously crafted ceramics and textiles, each product tells a story of creativity and skill. It's a platform that fosters connections between makers and buyers, promoting a culture of appreciation for handmade goods and supporting local artisans in their journey.
 
-## Getting Started
 
-First, run the development server:
+## Repo Intro
+This Repo Contains the client side code of the Artisan Alley Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
+- [Features](#features)
+- [Frontend](#frontend)
+  - [Technologies Used](#technologies-used)
+- [Backend](#backend)
+  - [Technologies Used](#technologies-used)
+- [Live-Site](#live-site)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Successfully implemented vertically moving tabs using headless UI.
+- Developed a vanilla timeline using CSS to showcase the working process.
+- Displayed a rotating list of six local artisans on the homepage, with the selection changing randomly each time the page is loaded.
+- Presented the most recent six products added to the database on the homepage.
+- Dynamic Contact Us and Newsletter section that allows users to easily reach out and subscribe to updates
+- Developed a secure authentication system using Google Firebase for user authentication and management.
+- Enable users to register as both regular users and artisans within the authentication system
+- Separate dashboards tailored for different types of users within the system
+- Allowed artisans to perform actions such as adding, editing, and deleting products within the system
+- Implement parallel filtering functionality for products on the products page
+- Enable users to view detailed product information, book products by providing their information, and bookmark products for later reference. Bookmarked products should be accessible from the user's profile page for easy retrieval.
+- Allowed artisans to view the products they have booked from their profile page, providing them with a convenient way to manage their bookings and track their sales.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Frontend
+#### Technologies Used
 
-## Learn More
+- Next JS: The frontend of Web App is built using Next JS, a popular React framework for building full-stack web applications.
+- Firebase: A platform for building web and mobile applications, used here for authentication and other features.
+- Axios: A promise-based HTTP client for making network requests.
+- Tanstack Query: A library for managing server state in React applications.
+- Swiper Js: Modern mobile touch slider library, enabling smooth and efficient touch-based navigation.
+- Lottie React: A library for adding Lottie animations to React applications.
+- React Hot Toast: A library for displaying toast notifications in React applications
+- React Icons: A library providing a collection of icons for React applications
+- React Loader Spinner: A library for displaying loading spinners in React applications.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend
+#### Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Node.js: The backend is powered by Node.js, a server-side runtime environment for JavaScript. It allows for efficient server-side scripting.
+- Express.js: The Express.js framework is used for building the RESTful API endpoints and handling routing on the server.
+- MongoDB Atlas: Cloud-hosted MongoDB service for data storage.
+- Dotenv: A zero-dependency module for loading environment variables from a .env file into process.env.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Live-Site
+To get a glimse of the Project, Please Visit https://artisan-alley-client.vercel.app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
